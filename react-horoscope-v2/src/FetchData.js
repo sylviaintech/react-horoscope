@@ -1,8 +1,6 @@
 import axios from "axios";
 
-import React, {useState} from "react";
-
-//import Button from "react-bootstrap/Button";
+import React, {useState, useEffect} from "react";
 
 import AllSignsCarousel from "./AllSignsCarousel";
 
@@ -11,79 +9,85 @@ export default function FetchData(props) {
   const [allToday, setAllToday] = useState({});
   const [dayButton, setDayButton] = useState(props.dateOnLoad);
 
-  const signs = [
-    "aries",
-    "taurus",
-    "gemini",
-    "cancer",
-    "leo",
-    "virgo",
-    "libra",
-    "scorpio",
-    "sagittarius",
-    "capricorn",
-    "aquarius",
-    "pisces",
-  ];
+  //useEffect(() => {
+  // when button clicks, update dayButton and perform new axiosHoroscopeSearch();
+  //});
 
   function newDate(event) {
     event.preventDefault();
-    debugger;
     setDayButton(event.target.value);
-
-    axiosHoroscopeSearch();
-  }
-
-  function horoscopeURL(oneSign) {
-    return `https://aztro.sameerkumar.website/?sign=${oneSign}&day=${dayButton}`;
   }
 
   function ariesURL() {
-    return axios.post(horoscopeURL(signs[0]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=aries&day=${dayButton}`
+    );
   }
 
   function taurusURL() {
-    return axios.post(horoscopeURL(signs[1]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=taurus&day=${dayButton}`
+    );
   }
 
   function geminiURL() {
-    return axios.post(horoscopeURL(signs[2]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=gemini&day=${dayButton}`
+    );
   }
 
   function cancerURL() {
-    return axios.post(horoscopeURL(signs[3]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=cancer&day=${dayButton}`
+    );
   }
 
   function leoURL() {
-    return axios.post(horoscopeURL(signs[4]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=leo&day=${dayButton}`
+    );
   }
 
   function virgoURL() {
-    return axios.post(horoscopeURL(signs[5]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=virgo&day=${dayButton}`
+    );
   }
 
   function libraURL() {
-    return axios.post(horoscopeURL(signs[6]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=libra&day=${dayButton}`
+    );
   }
 
   function scorpioURL() {
-    return axios.post(horoscopeURL(signs[7]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=scorpio&day=${dayButton}`
+    );
   }
 
   function sagittariusURL() {
-    return axios.post(horoscopeURL(signs[8]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=sagittarius&day=${dayButton}`
+    );
   }
 
   function capricornURL() {
-    return axios.post(horoscopeURL(signs[9]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=capricorn&day=${dayButton}`
+    );
   }
 
   function aquariusURL() {
-    return axios.post(horoscopeURL(signs[10]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=aquarius&day=${dayButton}`
+    );
   }
 
   function piscesURL() {
-    return axios.post(horoscopeURL(signs[11]));
+    return axios.post(
+      `https://aztro.sameerkumar.website/?sign=pisces&day=${dayButton}`
+    );
   }
 
   function axiosHoroscopeSearch() {
@@ -131,14 +135,6 @@ export default function FetchData(props) {
     axiosHoroscopeSearch();
   }
 
-  function loadingMessage() {
-    return (
-      <div className="text-center">
-        Errrrrr, I need a few seconds 😂🙃 Horoscope incoming...
-      </div>
-    );
-  }
-
   if (isLoaded === true) {
     return (
       <div>
@@ -154,12 +150,16 @@ export default function FetchData(props) {
           </button>
         </div>
         <div className="container text-center">
-          <AllSignsCarousel allToday={allToday} dayButton={dayButton} />
+          <AllSignsCarousel allToday={allToday} dayButton={setDayButton} />
         </div>
       </div>
     );
   } else {
-    loadingMessage();
     whenPageLoads();
+    return (
+      <div className="text-center">
+        Errrrrr, I need a few seconds 😂🙃 Horoscope incoming...
+      </div>
+    );
   }
 }
