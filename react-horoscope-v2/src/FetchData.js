@@ -6,16 +6,16 @@ import AllSignsCarousel from "./AllSignsCarousel";
 
 export default function FetchData(props) {
   const userDay = props.userDay;
+  const isClicked = props.isClicked;
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [allToday, setAllToday] = useState({});
 
   useEffect(
     () => {
-      return () => {
-        // eslint-disable-next-line
+      if (isClicked) {
         axiosHoroscopeSearch();
-      };
+      }
     },
     /////dependent on the following changing
     [userDay]
