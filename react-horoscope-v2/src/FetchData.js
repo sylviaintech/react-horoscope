@@ -5,88 +5,91 @@ import React, {useState, useEffect} from "react";
 import AllSignsCarousel from "./AllSignsCarousel";
 
 export default function FetchData(props) {
+  const userDay = props.userDay;
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [allToday, setAllToday] = useState({});
-  const [dayButton, setDayButton] = useState(props.dateOnLoad);
 
-  //useEffect(() => {
-  // when button clicks, update dayButton and perform new axiosHoroscopeSearch();
-  //});
-
-  function newDate(event) {
-    event.preventDefault();
-    setDayButton(event.target.value);
-  }
+  useEffect(
+    () => {
+      return () => {
+        // eslint-disable-next-line
+        axiosHoroscopeSearch();
+      };
+    },
+    /////dependent on the following changing
+    [userDay]
+  );
 
   function ariesURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=aries&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=aries&day=${userDay}`
     );
   }
 
   function taurusURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=taurus&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=taurus&day=${userDay}`
     );
   }
 
   function geminiURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=gemini&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=gemini&day=${userDay}`
     );
   }
 
   function cancerURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=cancer&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=cancer&day=${userDay}`
     );
   }
 
   function leoURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=leo&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=leo&day=${userDay}`
     );
   }
 
   function virgoURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=virgo&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=virgo&day=${userDay}`
     );
   }
 
   function libraURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=libra&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=libra&day=${userDay}`
     );
   }
 
   function scorpioURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=scorpio&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=scorpio&day=${userDay}`
     );
   }
 
   function sagittariusURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=sagittarius&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=sagittarius&day=${userDay}`
     );
   }
 
   function capricornURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=capricorn&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=capricorn&day=${userDay}`
     );
   }
 
   function aquariusURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=aquarius&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=aquarius&day=${userDay}`
     );
   }
 
   function piscesURL() {
     return axios.post(
-      `https://aztro.sameerkumar.website/?sign=pisces&day=${dayButton}`
+      `https://aztro.sameerkumar.website/?sign=pisces&day=${userDay}`
     );
   }
 
@@ -138,27 +141,18 @@ export default function FetchData(props) {
   if (isLoaded === true) {
     return (
       <div>
-        <div className="mt-5 my-2">
-          <button className="mx-1" value="yesterday" onClick={newDate}>
-            Yesterday
-          </button>
-          <button className="mx-1" value="today" onClick={newDate}>
-            Today
-          </button>
-          <button className="mx-1" value="tomorrow" onClick={newDate}>
-            Tomorrow
-          </button>
-        </div>
         <div className="container text-center">
-          <AllSignsCarousel allToday={allToday} dayButton={setDayButton} />
+          <AllSignsCarousel allToday={allToday} userDay={userDay} />
         </div>
       </div>
     );
   } else {
     whenPageLoads();
     return (
-      <div className="text-center">
-        Errrrrr, I need a few seconds 😂🙃 Horoscope incoming...
+      <div className="container text-center">
+        Errrrrr, I need a few seconds for the rest 🙃
+        <br />
+        Horoscope is incoming...🌠
       </div>
     );
   }

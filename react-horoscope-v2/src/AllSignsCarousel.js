@@ -24,15 +24,15 @@ export default function AllSignsCarousel(props) {
   //console.log(allToday);
   //console.log(allToday.aries.title);
 
-  const dayButton = props.dayButton;
-  console.log(dayButton);
+  const userDay = props.userDay;
+  console.log(userDay);
   const horoscopeDate = allToday.aries.current_date;
 
   if (props.allToday !== {}) {
     return (
       <div>
         <div>
-          Your horoscope for {dayButton}, {horoscopeDate}
+          Your horoscope for {userDay}, {horoscopeDate}
         </div>
         <Carousel className="my-5">
           {Object.keys(allToday).map((starSign) => (

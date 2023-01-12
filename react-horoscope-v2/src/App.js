@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 
 import "./App.css";
-import FetchData from "./FetchData";
+import UserSelects from "./UserSelects";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="mb-5 mt-1">Your React Horoscope</h1>
       </header>
-      <FetchData dateOnLoad="today" />
+      <UserSelects />
     </div>
   );
 }
