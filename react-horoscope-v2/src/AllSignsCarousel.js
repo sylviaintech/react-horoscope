@@ -21,9 +21,6 @@ export default function AllSignsCarousel(props) {
   allToday.aquarius.title = "aquarius";
   allToday.pisces.title = "pisces";
 
-  //console.log(allToday);
-  //console.log(allToday.aries.title);
-
   const userDay = props.userDay;
   console.log(userDay);
   const horoscopeDate = allToday.aries.current_date;
