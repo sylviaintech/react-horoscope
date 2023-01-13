@@ -11,15 +11,17 @@ export default function FetchData(props) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [allToday, setAllToday] = useState({});
 
-  useEffect(
-    () => {
-      if (isClicked) {
-        axiosHoroscopeSearch();
-      }
-    },
-    /////dependent on the following changing
-    [userDay]
-  );
+  useEffect(() => {
+    if (isClicked) {
+      axiosHoroscopeSearch();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userDay]);
+
+  //Full terminal msg for useEffect above
+  //React Hook useEffect has missing dependencies: 'axiosHoroscopeSearch' and 'isClicked'.
+  //Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  //https://stackoverflow.com/questions/55840294
 
   function ariesURL() {
     return axios.post(
@@ -137,7 +139,6 @@ export default function FetchData(props) {
   function whenPageLoads() {
     axiosHoroscopeSearch();
   }
-
   if (isLoaded === true) {
     return (
       <div>

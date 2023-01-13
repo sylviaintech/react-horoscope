@@ -15,28 +15,13 @@ export default function UserSelects() {
   return (
     <div>
       <div className="mt-5 my-2">
-        <button
-          className="mx-1"
-          value="yesterday"
-          onClick={newDate}
-          isClicked={false}
-        >
+        <button className="mx-1" value="yesterday" onClick={newDate}>
           Yesterday
         </button>
-        <button
-          className="mx-1"
-          value="today"
-          onClick={newDate}
-          isClicked={false}
-        >
+        <button className="mx-1" value="today" onClick={newDate}>
           Today
         </button>
-        <button
-          className="mx-1"
-          value="tomorrow"
-          onClick={newDate}
-          isClicked={false}
-        >
+        <button className="mx-1" value="tomorrow" onClick={newDate}>
           Tomorrow
         </button>
       </div>
