@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #ae9bb1;
 }
 
 .App-logo {
@@ -42,3 +43,7 @@ p {
   background-color: #354565;
   color: red;
 }
+
+/*class - hover-text, horoscope-date, horoscope-title-grid, horoscope-dates-grid, horoscope-title-grid*/
+
+/*Carousel button class="carousel-control-next-icon" - add background colour*/

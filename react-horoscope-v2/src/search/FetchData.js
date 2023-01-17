@@ -2,7 +2,7 @@ import axios from "axios";
 
 import React, {useState, useEffect} from "react";
 
-import AllSignsCarousel from "./AllSignsCarousel";
+import AllSignsCarousel from "../results/AllSignsCarousel";
 
 export default function FetchData(props) {
   const userDay = props.userDay;

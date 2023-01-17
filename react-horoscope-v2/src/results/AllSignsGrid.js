@@ -1,13 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 //
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 //
-import LinedImgs from "./mapping-imgs/LinedImgs";
+import LinedImgs from "../mapping-imgs/LinedImgs";
 import Description from "./Description.js";
 //
 export default function AllSignsGrid(props) {
-  const [openDecription, setOpenDecription] = useState(false);
   const allToday = props.allToday;
 
   if (props.allToday !== {}) {
@@ -18,17 +17,15 @@ export default function AllSignsGrid(props) {
             <div key={starSign} className="col-3">
               <OverlayTrigger
                 placement="top"
-                overlay={<Tooltip id="button-tooltip-2">{starSign}</Tooltip>}
+                overlay={
+                  <Tooltip id="button-tooltip-2" className="hover-text">
+                    {starSign}
+                  </Tooltip>
+                }
               >
-                <a
-                  className="py-5"
-                  onClick={() => setOpenDecription(!openDecription)}
-                  aria-controls="horoscope-text"
-                  aria-expanded={openDecription}
-                  href="#0"
-                >
+                <span className="py-5" href="#0">
                   <LinedImgs sign={starSign} />
-                </a>
+                </span>
               </OverlayTrigger>
 
               <div>

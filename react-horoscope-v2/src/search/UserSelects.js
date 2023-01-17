@@ -15,7 +15,6 @@ export default function UserSelects() {
   return (
     <div>
       <div className="mt-5 my-2">
-        <p>Choose a date</p>
         <button className="mx-1" value="yesterday" onClick={newDate}>
           Yesterday
         </button>
