@@ -1,32 +1,79 @@
+:root {
+  --main-color: #ae9bb1;
+  --main-color-faded: #ae9bb18a;
+  --secondary-color: #a18db3;
+  --tertiary-color: rgba(124, 149, 149, 0.397);
+  --background-color: rgb(124, 149, 149);
+}
+
 .App {
   text-align: center;
-  background-color: #ae9bb1;
+  background-color: var(--main-color);
+  margin: auto;
+  max-width: 1000px;
 }
 
 .App-logo {
-  height: 10vmin;
+  height: 50pt;
   pointer-events: none;
 }
+
+.carousel-text-bg {
+  background-color: var(--main-color-faded);
+}
+
+footer,
+header {
+  background-color: var(--secondary-color);
+}
+
+.hover-text,
+.horoscope-title-grid,
+.horoscope-title-carousel {
+  text-transform: capitalize;
+}
+
+.horoscope-title-grid,
+.horoscope-title-carousel {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.user-date {
+  font-weight: 900;
+  font-style: italic;
+}
+
+.hover-text {
+  font-size: 12px;
+}
+
+.horocope-dates-carousel,
+.horoscope-dates-grid {
+  font-weight: 600;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.horoscope-text {
+  font-size: 14px;
+}
+
+.page-title {
+  font-size: 45px;
+  padding-bottom: 20px;
+}
+
+/*class - hover-text, horoscope-date, horoscope-title-grid, horoscope-dates-grid, horoscope-title-grid*/
+
+/*Carousel button class="carousel-control-next-icon" - add background colour*/
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 5s linear;
   }
-}
-
-.App-header {
-  background-color: #354565;
-  min-height: 5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: blueviolet;
 }
 
 @keyframes App-logo-spin {
@@ -37,13 +84,3 @@
     transform: rotate(360deg);
   }
 }
-
-h3,
-p {
-  background-color: #354565;
-  color: red;
-}
-
-/*class - hover-text, horoscope-date, horoscope-title-grid, horoscope-dates-grid, horoscope-title-grid*/
-
-/*Carousel button class="carousel-control-next-icon" - add background colour*/

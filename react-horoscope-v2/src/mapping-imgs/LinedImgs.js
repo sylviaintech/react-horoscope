@@ -26,11 +26,13 @@ const signsMapping = {
   pisces: piscesLined,
 };
 
+const textElaborate = "A colored and filled image of ";
+
 const LinedImgs = (props) => (
   <img
     src={signsMapping[props.sign]}
     className="d-block-center img-thumbnail my-3"
-    alt={props.sign}
+    alt={(textElaborate, props.sign)}
   />
 );
 

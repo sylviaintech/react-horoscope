@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="col-12 text-center my-4">
+    <div className="col-12 text-center">
       <hr />
       <footer>
         <div>

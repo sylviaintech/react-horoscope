@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styling/App.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import UserSelects from "./search/UserSelects";
