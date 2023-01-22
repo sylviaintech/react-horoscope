@@ -31,7 +31,7 @@ const textElaborate = "A colored and filled image of ";
 const LinedImgs = (props) => (
   <img
     src={signsMapping[props.sign]}
-    className="d-block-center img-thumbnail my-3"
+    className="d-block-center img-fluid my-3 grid-img"
     alt={(textElaborate, props.sign)}
   />
 );

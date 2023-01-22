@@ -11,10 +11,10 @@ export default function AllSignsGrid(props) {
 
   if (props.allToday !== {}) {
     return (
-      <div className="container my-5 text-center">
+      <div className="container my-5 text-center grid-text">
         <div className="row">
           {Object.keys(allToday).map((starSign) => (
-            <div key={starSign} className="col-4">
+            <div key={starSign} className="col-sm-4">
               <OverlayTrigger
                 placement="top"
                 overlay={

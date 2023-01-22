@@ -4,6 +4,35 @@
   --secondary-color: #a18db3;
   --tertiary-color: rgba(124, 149, 149, 0.397);
   --background-color: rgb(124, 149, 149);
+  --off-white: #f4eff5;
+  --soft-black: rgba(26, 23, 31, 0.848);
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: var(--secondary-color);
+  border-width: 1px solid;
+  border-radius: 5px;
+  background-color: var(--tertiary-color);
+  font-size: 16px;
+}
+
+button:hover {
+  color: var(--off-white);
+  font-weight: bold;
+  background-color: var(--secondary-color);
+}
+
+footer,
+header,
+hr {
+  background-color: var(--secondary-color);
+  color: var(--soft-black);
+}
+
+h1 {
+  font-weight: 900;
 }
 
 .App {
@@ -20,11 +49,15 @@
 
 .carousel-text-bg {
   background-color: var(--main-color-faded);
+  color: var(--off-white);
 }
 
-footer,
-header {
-  background-color: var(--secondary-color);
+.grid-img {
+  max-width: 200px;
+}
+
+.grid-text {
+  color: var(--soft-black);
 }
 
 .hover-text,
@@ -41,15 +74,6 @@ header {
   padding: 0;
 }
 
-.user-date {
-  font-weight: 900;
-  font-style: italic;
-}
-
-.hover-text {
-  font-size: 12px;
-}
-
 .horocope-dates-carousel,
 .horoscope-dates-grid {
   font-weight: 600;
@@ -61,14 +85,27 @@ header {
   font-size: 14px;
 }
 
+.hover-text {
+  font-size: 12px;
+}
+
+.img-thumbnail {
+  background-color: none;
+}
+
 .page-title {
   font-size: 45px;
   padding-bottom: 20px;
 }
 
-/*class - hover-text, horoscope-date, horoscope-title-grid, horoscope-dates-grid, horoscope-title-grid*/
+.user-date {
+  text-decoration: underline;
+}
 
-/*Carousel button class="carousel-control-next-icon" - add background colour*/
+.user-date-main,
+.user-date {
+  font-weight: 900;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -82,5 +119,17 @@ header {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .horoscope-desription-carousel {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 430px) {
+  .carousel-hide {
+    display: none;
   }
 }

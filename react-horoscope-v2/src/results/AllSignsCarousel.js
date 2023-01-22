@@ -30,11 +30,11 @@ export default function AllSignsCarousel(props) {
       <div>
         <div className="pt-2">
           Your horoscope for{" "}
-          <span className="user-date">
+          <span className="user-date-main">
             {userDay}, {horoscopeDate}
           </span>
         </div>
-        <Carousel className="my-5">
+        <Carousel className="my-5 carousel-hide">
           {Object.keys(allToday).map((starSign) => (
             <Carousel.Item key={starSign}>
               <FilledImgs sign={allToday[starSign].title} class="img-fluid" />
@@ -43,9 +43,11 @@ export default function AllSignsCarousel(props) {
                   <div className="horoscope-title-carousel">
                     {allToday[starSign].title}
                   </div>
-                  <p className="horocope-dates-carousel">
-                    {allToday[starSign].date_range}
-                  </p>
+
+                  <div className="horocope-dates-carousel">
+                    ({allToday[starSign].date_range})
+                  </div>
+                  <p className="user-date">{allToday[starSign].current_date}</p>
                   <p className="horoscope-description-carousel">
                     {allToday[starSign].description}
                   </p>

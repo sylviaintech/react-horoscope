@@ -3,9 +3,9 @@ import React from "react";
 export default function Footer() {
   return (
     <div className="col-12 text-center">
-      <hr />
       <footer>
-        <div>
+        <hr />
+        <div className="my-2">
           The Astrology results were bought to you via{" "}
           <i className="fa-brands fa-creative-commons"></i>{" "}
           <a
@@ -23,11 +23,11 @@ export default function Footer() {
             rel="noopener noreferrer"
             href="https://github.com/sameerkumar18/aztro/blob/master/LICENSE"
           >
-            under Apache License 2.0{" "}
+            under Apache License 2.0
           </a>
           .
         </div>
-        <div>
+        <div className="my-2">
           The Zodiac icons were{" "}
           <a
             className="footer-SO-link"
@@ -39,7 +39,7 @@ export default function Footer() {
           </a>
           {"."}
         </div>
-        <div>
+        <div className="my-1 pb-5">
           This Horoscope App is built using React
           <i className="fa-brands fa-react"></i>, hosted with{" "}
           <a
