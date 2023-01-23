@@ -24,26 +24,48 @@ export default function AllSignsCarousel(props) {
   const userDay = props.userDay;
   console.log(userDay);
   const horoscopeDate = allToday.aries.current_date;
+  const urlAddition = "#";
 
   if (props.allToday !== {}) {
     return (
       <div>
         <div className="pt-2">
-          Your horoscope for{" "}
-          <span className="user-date-main">
-            {userDay}, {horoscopeDate}
-          </span>
+          <p>
+            Your horoscope for{" "}
+            <span className="user-date-main">
+              {userDay}, {horoscopeDate}
+            </span>
+          </p>
+          <div className="mobile-shortcuts">
+            <p>Go straight to:</p>
+            {Object.keys(allToday).map((starSign) => (
+              <ul key={starSign}>
+                <li sign={allToday[starSign].title}>
+                  <a
+                    target="_self"
+                    href={urlAddition + allToday[starSign].title}
+                    className="mobile-shortcuts-link"
+                  >
+                    {allToday[starSign].title} |
+                  </a>
+                </li>
+              </ul>
+            ))}
+          </div>
         </div>
         <Carousel className="my-5 carousel-hide">
           {Object.keys(allToday).map((starSign) => (
             <Carousel.Item key={starSign}>
-              <FilledImgs sign={allToday[starSign].title} class="img-fluid" />
+              <FilledImgs
+                sign={allToday[starSign].title}
+                class="img-fluid"
+                id={allToday[starSign].title}
+              />
               <Carousel.Caption>
                 <div className="carousel-text-bg">
                   <div className="horoscope-title-carousel">
                     {allToday[starSign].title}
                   </div>
-
                   <div className="horocope-dates-carousel">
                     ({allToday[starSign].date_range})
                   </div>
