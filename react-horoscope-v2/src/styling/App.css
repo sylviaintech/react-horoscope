@@ -196,11 +196,11 @@ ul {
 
   .day-button {
     padding: 10px 20px;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .horoscope-description-carousel {
-    font-size: 8px;
+    font-size: 14px;
     padding-left: 0;
     padding-right: 0;
   }
@@ -245,9 +245,8 @@ ul {
   }
 }
 
-@media (max-width: 330px) {
-  .img-carousel {
-    padding-top: 50px;
-    padding-bottom: 50px;
+@media (max-width: 355px) {
+  .carousel-slides {
+    display: none;
   }
 }
