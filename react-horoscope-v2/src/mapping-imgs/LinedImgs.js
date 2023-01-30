@@ -28,12 +28,12 @@ const signsMapping = {
 
 const textElaborate = "A colored and filled image of ";
 
-const LinedImgs = (props) => (
-  <img
-    src={signsMapping[props.sign]}
-    className="d-block-center img-fluid my-3 grid-img"
-    alt={(textElaborate, props.sign)}
-  />
-);
-
-export default LinedImgs;
+export default function LinedImgs(props) {
+  return (
+    <img
+      src={signsMapping[props.sign]}
+      className="d-block-center img-fluid my-3 grid-img"
+      alt={(textElaborate, props.sign)}
+    />
+  );
+}

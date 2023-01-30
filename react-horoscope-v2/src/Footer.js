@@ -9,19 +9,21 @@ export default function Footer() {
           The Astrology results were bought to you via{" "}
           <i className="fa-brands fa-creative-commons"></i>{" "}
           <a
-            className="footer-SO-link"
+            className="footlink footer-SO-link"
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/sameerkumar18/aztro"
+            title="Aztro Project on Github"
           >
             Aztro API
           </a>{" "}
           (by Sameer Kumar and other contributors){" "}
           <a
-            className="footer-SO-link"
+            className="footlink footer-SO-link"
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/sameerkumar18/aztro/blob/master/LICENSE"
+            title="License"
           >
             under Apache License 2.0
           </a>
@@ -30,10 +32,11 @@ export default function Footer() {
         <div className="my-2">
           The Zodiac icons were{" "}
           <a
-            className="footer-SO-link"
+            className="footlink footer-SO-link"
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.flaticon.com/packs/zodiac-2"
+            title="Roundicons on flaticon.com"
           >
             created by Roundicons - Flaticon
           </a>
@@ -47,21 +50,21 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer nopener"
             href="https://www.netlify.com"
+            title="Netlify"
           >
             Netlify
           </a>
           , and{" "}
-          <strong>
-            <a
-              className="footlink"
-              target="_blank"
-              rel="noreferrer noopener"
-              href="https://github.com/sylviaintech/"
-            >
-              open-source-coded
-            </a>{" "}
-          </strong>
-          by SylviaInTech
+          <a
+            className="footlink"
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://github.com/sylviaintech/"
+            title="Github"
+          >
+            coded by SylviaInTech
+          </a>
+          {"."}
         </div>
       </footer>
     </div>

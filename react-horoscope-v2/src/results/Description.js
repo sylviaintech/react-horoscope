@@ -1,6 +1,10 @@
 import React from "react";
 
 export default function Description(props) {
+  function backToTop() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <div>
       <div className="horoscope-title-grid" id={props.horoscope.title}>
@@ -13,13 +17,13 @@ export default function Description(props) {
         {props.horoscope.current_date}
         {":"}
       </div>
-      <p className="text-start horoscope-description-grid">
+      <p className="horoscope-description-grid">
         {props.horoscope.description}
       </p>
       <p className="top-page">
-        <a target="_self" href="#top" className="top-page-link">
+        <button className="top-page-link" onClick={backToTop}>
           Back to top
-        </a>
+        </button>
       </p>
     </div>
   );

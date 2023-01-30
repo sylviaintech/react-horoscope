@@ -26,13 +26,12 @@ const signsMapping = {
   pisces: piscesFilled,
 };
 
-const imgFluid = "img-fluid";
 const textElaborate = "A lined image showing the symbol for ";
 
 const FilledImgs = (props) => (
   <img
     src={signsMapping[props.sign]}
-    className={(props.className, imgFluid)}
+    className="img-fluid img-carousel"
     alt={(textElaborate, props.alt)}
   />
 );

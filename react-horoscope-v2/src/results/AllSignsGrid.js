@@ -11,21 +11,17 @@ export default function AllSignsGrid(props) {
 
   if (props.allToday !== {}) {
     return (
-      <div className="container my-5 text-center grid-text">
+      <div className="container text-center grid-text">
         <div className="row">
           {Object.keys(allToday).map((starSign) => (
             <div key={starSign} className="col-sm-4">
               <OverlayTrigger
                 placement="top"
-                overlay={
-                  <Tooltip id="button-tooltip-2" className="hover-text">
-                    {starSign}
-                  </Tooltip>
-                }
+                overlay={<Tooltip className="hover-text">{starSign}</Tooltip>}
               >
-                <span className="py-5" href="#0">
+                <div>
                   <LinedImgs sign={starSign} />
-                </span>
+                </div>
               </OverlayTrigger>
 
               <div>

@@ -22,7 +22,6 @@ export default function AllSignsCarousel(props) {
   allToday.pisces.title = "pisces";
 
   const userDay = props.userDay;
-  console.log(userDay);
   const horoscopeDate = allToday.aries.current_date;
   const urlAddition = "#";
 
@@ -53,12 +52,11 @@ export default function AllSignsCarousel(props) {
             ))}
           </div>
         </div>
-        <Carousel className="my-5 carousel-hide">
+        <Carousel className="carousel-slides">
           {Object.keys(allToday).map((starSign) => (
             <Carousel.Item key={starSign}>
               <FilledImgs
                 sign={allToday[starSign].title}
-                class="img-fluid"
                 id={allToday[starSign].title}
               />
               <Carousel.Caption>
@@ -69,7 +67,9 @@ export default function AllSignsCarousel(props) {
                   <div className="horocope-dates-carousel">
                     ({allToday[starSign].date_range})
                   </div>
-                  <p className="user-date">{allToday[starSign].current_date}</p>
+                  <p className="user-date-carousel">
+                    {allToday[starSign].current_date}
+                  </p>
                   <p className="horoscope-description-carousel">
                     {allToday[starSign].description}
                   </p>
